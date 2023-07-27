@@ -1,0 +1,12 @@
+type Location {
+  id: ID!
+  name: String!
+  desc: String!
+  lat: Float
+  lng: Float
+}
+
+type Query {
+  getLocations: [Location!]!
+  getLocation(id: ID!): Location!
+}

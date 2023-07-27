@@ -1,0 +1,10 @@
+type Participant {
+  id: ID!
+  user_id: ID!
+  event_id: ID!
+}
+
+type Query {
+  getParticipants: [Participant!]!
+  getParticipant(id: ID!): Participant!
+}
