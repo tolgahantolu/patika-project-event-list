@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { GET_ALL_EVENTS } from "./queries";
+import AddEventForm from "./AddEventForm";
 
 const Home = () => {
   const { loading, error, data } = useQuery(GET_ALL_EVENTS);
@@ -11,41 +12,7 @@ const Home = () => {
           Event Sync
         </h2>
         <div className="w-full grid place-items-center pt-5">
-          <form className="w-1/2 bg-slate-300 rounded-md py-14 px-7">
-            <div className="flex flex-col gap-1 mb-3">
-              <label htmlFor="title">Title:</label>
-              <input
-                type="text"
-                name="title"
-                placeholder="Enter event title"
-                className="placeholder:text-sm focus:outline-none px-2 py-2 rounded-md"
-              />
-            </div>
-            <div className="flex flex-col gap-1 mb-3">
-              <label htmlFor="desc">Description:</label>
-              <input
-                type="text"
-                name="desc"
-                placeholder="Enter event description"
-                className="placeholder:text-sm focus:outline-none px-2 py-2 rounded-md"
-              />
-            </div>
-            <div className="flex flex-col gap-1 mb-3">
-              <label htmlFor="date">Date:</label>
-              <input
-                type="text"
-                name="date"
-                placeholder="Enter event date"
-                className="placeholder:text-sm focus:outline-none px-2 py-2 rounded-md"
-              />
-            </div>
-            <button
-              type="submit"
-              className="rounded-md bg-blue-600 text-white px-3 py-2"
-            >
-              Add Event
-            </button>
-          </form>
+          <AddEventForm />
         </div>
       </div>
       <div className="w-1/2 mx-auto h-60 overflow-auto">
